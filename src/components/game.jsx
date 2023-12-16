@@ -8,7 +8,7 @@ export default function Game() {
   return (
     <div className='game-board'>
       {sudoku.puzzle.split('').map((val, index) => {
-        return <Cell key={index} val={val} />;
+        return <Cell key={index} index={index} val={val} />;
       })}
     </div>
   );
