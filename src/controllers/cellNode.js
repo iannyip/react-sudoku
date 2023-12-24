@@ -39,8 +39,11 @@ const checkBorderX = (cellIndex) => {
 class CellNode {
   constructor(index, value) {
     this.index = index;
-    this.value = value === '-' ? '' : value;
+    this.answer = '';
     this.coordinates = getCoordinates(index);
+    this.notes = [];
+    this.type = 'permanent';
+    this.value = value === '-' ? '' : value;
   }
 
   getCoordinates() {
@@ -58,12 +61,32 @@ class CellNode {
     }
   }
 
+  isCorrect() {
+    return this.val === this.answer;
+  }
+
   get getBorderStyles() {
     return `${checkBorderY(this.index)} ${checkBorderX(this.index)}`;
   }
 
-  get getValue() {
-    return this.value;
+  get value() {
+    return this._value;
+  }
+
+  set value(newValue) {
+    this.value = newValue;
+  }
+
+  get notes() {
+    return this._notes;
+  }
+
+  set updateNotes(newValue) {
+    if (this.notes.includes(newValue)) {
+      this.notes.splice(this.notes.indexOf(newValue), 1);
+    } else {
+      this.notes.push(newValue);
+    }
   }
 }
 
