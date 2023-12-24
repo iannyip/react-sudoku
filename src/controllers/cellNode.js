@@ -42,7 +42,7 @@ class CellNode {
     this.answer = '';
     this.coordinates = getCoordinates(index);
     this.notes = [];
-    this.type = 'permanent';
+    this.type = value === '-' ? 'input' : 'permanent';
     this.value = value === '-' ? '' : value;
   }
 
@@ -69,16 +69,16 @@ class CellNode {
     return `${checkBorderY(this.index)} ${checkBorderX(this.index)}`;
   }
 
-  get value() {
-    return this._value;
+  get getValue() {
+    return this.value;
   }
 
-  set value(newValue) {
+  set setValue(newValue) {
     this.value = newValue;
   }
 
-  get notes() {
-    return this._notes;
+  get getNotes() {
+    return this.notes;
   }
 
   set updateNotes(newValue) {
