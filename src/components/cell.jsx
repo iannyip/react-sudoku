@@ -1,4 +1,3 @@
-import { checkBorderX, checkBorderY } from '../utils/styling.js';
 import { CellNode } from '../controllers/cellNode.js';
 import './styles.css';
 
@@ -17,13 +16,13 @@ export default function Cell({
 
   const dynamicCellStyle = {
     backgroundColor: cell.isHighlighted(cellSelection.coordinates)
-      ? '#51557bde'
+      ? 'pink'
       : '',
   };
 
   return (
     <div
-      className={`${checkBorderX(index)} ${checkBorderY(index)} cell`}
+      className={`cell ${cell.getBorderStyles}`}
       style={dynamicCellStyle}
       onMouseOver={handleHover}
     >

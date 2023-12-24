@@ -5,25 +5,41 @@
 }
 
 .cell {
-  border: 1px solid #d7d7d77d;
-  /* display: flex; */
+  border: 1px solid #c8cedd;
   text-align: center;
   vertical-align: middle;
   line-height: 50px;
+  font-size: 1.8rem;
 }
 
-.top {
-  border-top: 1px solid white;
+.outer-top {
+  border-top: 2px solid #344861;
 }
 
-.bottom {
-  border-bottom: 1px solid white;
+.outer-bottom {
+  border-bottom: 2px solid #344861;
 }
 
-.right {
-  border-right: 1px solid white;
+.outer-right {
+  border-right: 2px solid #344861;
 }
 
-.left {
-  border-left: 1px solid white;
+.outer-left {
+  border-left: 2px solid #344861;
+}
+
+.inner-top {
+  border-top: 1px solid #344861;
+}
+
+.inner-bottom {
+  border-bottom: 1px solid #344861;
+}
+
+.inner-right {
+  border-right: 1px solid #344861;
+}
+
+.inner-left {
+  border-left: 1px solid #344861;
 }
